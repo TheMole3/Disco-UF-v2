@@ -5,6 +5,6 @@
 
 @font-face {
     font-family: 'DiscoFont';
-    src: local('Brontoburger'), url(./discoFont.ttf) format('opentype');
+    src: local('Brontoburger'), url(discoFont.ttf) format('opentype');
 }
 
