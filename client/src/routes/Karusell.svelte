@@ -79,6 +79,14 @@
         setTimeout(() => {
             stagger = "xyz-in"
         }, 2100)
+
+        // Make scrolling work
+        if(typeof window !== "undefined") {
+            window.addEventListener("wheel", function (e) {
+                if (e.deltaY > 0) carousel.scrollLeft += 250;
+                else carousel.scrollLeft -= 250;
+            });
+        }
     })
 
     onDestroy(() => {
@@ -226,4 +234,4 @@
     </div>
 
 
-  </div>
+</div>
