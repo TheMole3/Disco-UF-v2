@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-static": "^1.0.0",
 		"dot-object": "^2.1.4",
 		"fuse.js": "^6.6.2",
 		"lodash": "^4.17.21",
