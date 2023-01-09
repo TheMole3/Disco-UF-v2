@@ -1,8 +1,7 @@
 <script>
-	import { json } from '@sveltejs/kit';
     import {Spinner, Label, Modal, Button, Heading, P} from 'flowbite-svelte'
     import { onDestroy, onMount } from 'svelte';
-    import config from './config.json'
+    import config from './config.js'
 
     export let currentStep;
     export let booking;
