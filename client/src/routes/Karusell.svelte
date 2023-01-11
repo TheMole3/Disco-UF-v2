@@ -110,7 +110,8 @@
             <div class="card-body">
 
               <h2 class="card-title">FÖRBETALNING!</h2>
-              <p class="mb-4">Förbetala och kom in snabbare!</p>
+              <p class="">Förbetala och kom in snabbare!</p>
+              <p class="mt-0 mb-4 text-sm">OBS!<br>Förbetalningen stänger 10/2 14:00</p>
 
               <div class="card-actions justify-end">
                 <a href="/booking" class="btn">Till förbetalningen</a>

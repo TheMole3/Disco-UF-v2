@@ -4,8 +4,8 @@
 </script>
 
 <Modal title="Integritetspolicy" bind:open={open} xl autoclose>
-    <P>Disco Melo Payment Flow</P>
-    <P>Disco Melo Payment Flow samlar in data från bokningar. Denna data samlas in:<br>
+    <P>Disco Melo</P>
+    <P>Disco Melo samlar in data från bokningar. Denna data samlas in:<br>
     Namn<br>
     Telefonnummer<br>
     Årskurs<br>

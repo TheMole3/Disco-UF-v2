@@ -38,6 +38,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/addBooking', async (req, res) => {
+    if((new Date() > new Date("2023-02-10 14:00"))) return res.status(405).json({ error: 'Förbetalningen har stängt!' })
+
     let booking = {
         "guardianName": req.body.guardianName || "",
         "guardianSurname": req.body.guardianSurname || "",

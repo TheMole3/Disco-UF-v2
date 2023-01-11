@@ -36,14 +36,14 @@ let parseDB = async (DB) => {
 const adminServer = async (httpServer, manageServer, db) => {
     io = new Server(httpServer, {
         cors: {
-            origin: ["http://192.168.86.197:5173", "http://localhost:5173", "http://localhost:5174", "http://192.168.1.13:5174"],
+            origin: config.origin,
             credentials: true,
         }
     });
 
 
     // Add login middleware
-    //io.use(auth.jwt.socketIoMiddleware);
+    io.use(auth.jwt.socketIoMiddleware);
 
 
     let DB = await parseDB(await manageServer.getBookings());
