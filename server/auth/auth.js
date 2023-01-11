@@ -28,7 +28,7 @@ var jwt = {
         });
     },
     socketIoMiddleware(socket, next) {
-	console.log(getCookieValue(socket.request.headers.cookie, "discoAuthToken"))        
+	console.log(getCookieValue(socket.request.headers.cookie, "discoAuthToken"));      
 	const token = getCookieValue(socket.request.headers.cookie, "discoAuthToken");
         const NoTokenErr = new Error("Not Authorized");
         NoTokenErr.data = 401;
@@ -36,7 +36,7 @@ var jwt = {
 
         jsonwebtoken.verify(token, config.authSecret, (err, id) => { // Verify tokens validity and decrypt
             user.findById(id, (error, user) => { // Find logged in user
-                if(error) {
+                if(error || user.authLevel < 1) {
                     const ForbiddenError = new Error("Forbidden");
                     ForbiddenError.data = 403;
 
