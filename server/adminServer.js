@@ -36,7 +36,7 @@ let parseDB = async (DB) => {
 const adminServer = async (httpServer, manageServer, db) => {
     io = new Server(httpServer, {
         cors: {
-            origin: config.origin,
+            origin: ["https://admindisco.melo.se"],
             credentials: true,
         }
     });
