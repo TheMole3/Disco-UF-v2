@@ -88,7 +88,7 @@ app.get('/redirect', (req, res) => { // Microsoft Azure Auth redirect endpoint
         res: res,
     }, (success) => {
         if(success) { // If succesfully logged in
-            res.redirect('/'); // Redirect to portal
+            res.redirect('https://admindisco.melo.se'); // Redirect to portal
         }
         else {
             res.send('Login error! Please contact the administrator');
