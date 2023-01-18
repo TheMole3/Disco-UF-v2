@@ -8,9 +8,14 @@ const jsonwebtoken = require('jsonwebtoken')
 
 const user = require('./user'); // User handling
 
+const getCookieValue = (cookie, name) => (
+  	cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+)
+
 var jwt = {
     authenticateToken(req, res, next) { // Verify token and save logged in user in req.user
         // Gather the jwt access token from the request header
+	//console.log(req.cookies);
         const token = req.cookies.discoAuthToken;
         if(!token) return next(); // If there is no token, aka no logged in user, move on
       
@@ -23,7 +28,8 @@ var jwt = {
         });
     },
     socketIoMiddleware(socket, next) {
-        const token = socket.request.headers.discoAuthToken;
+	console.log(getCookieValue(socket.request.headers.cookie, "discoAuthToken"));      
+	const token = getCookieValue(socket.request.headers.cookie, "discoAuthToken");
         const NoTokenErr = new Error("Not Authorized");
         NoTokenErr.data = 401;
         if(!token) return next(NoTokenErr);
