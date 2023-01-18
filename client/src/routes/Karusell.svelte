@@ -300,7 +300,7 @@
                 </h2>
 
                 <p class="font-thin">Vi är UF företaget DISCO MELO som nu för tredje gången kör igen!</p>
-                <p class="font-thin mt-0 mb-4">På discot jobbar ett gäng ungdomar från Curt Nicolin Gymnasiet som finns där ifall det är något! </p>
+                <p class="font-thin mt-0 mb-4">På discot jobbar ett gäng ungdomar från Curt Nicolin Gymnasiet som finns där för er! </p>
 
                 <div class="card-actions underline">
                     <a href="mailto:disco@melo.se">E-post: disco@melo.se</a>
