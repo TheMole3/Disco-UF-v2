@@ -38,6 +38,8 @@ const adminServer = async (httpServer, manageServer, db) => {
         cors: {
             origin: ["https://admindisco.melo.se"],
             credentials: true,
+	    methods: ["GET", "POST"],
+	    transports: ["websocket", "polling"]
         }
     });
 
