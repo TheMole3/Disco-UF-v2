@@ -13,7 +13,7 @@ export let removeChild;
 
 let name = child.name;
 let surname = child.surname;
-let money = child.money||40;
+let money = child.money||0;
 let isLagstadie = child.isLagstadie
 
 $: child = { ...child, name, surname, money, isLagstadie }
