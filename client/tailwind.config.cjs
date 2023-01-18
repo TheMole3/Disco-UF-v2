@@ -19,6 +19,26 @@ module.exports = {
 				'DiscoFont': ['DiscoFont'],
         oswald: ['Oswald', 'sans-serif']
 			},
+      animation: {
+				"fallIn": 'fallIn 1.2s ease-in-out 1',
+			},
+			keyframes: {
+				"fallIn": {
+					
+					'0%, 40%': { 
+						transform: 'rotate(-3deg)',
+						"animation-timing-function": "ease-in-out",
+					},
+					'20%, 60%': { 
+						transform: 'rotate(3deg)',
+						"animation-timing-function": "ease-in-out",
+					},
+					'80%': { 
+						transform: 'rotate(0deg)',  
+						"animation-timing-function": "ease-in-out",
+					},
+				}
+			}
     }
   },
   plugins: [require('daisyui'), require('flowbite/plugin')],

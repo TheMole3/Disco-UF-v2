@@ -6,16 +6,14 @@
     import { tweened } from 'svelte/motion';
 
     /* Background movement */
-    const backgroundTween = tweened(0, {
-		duration: 50000,
-	});
+    let backgroundPos = 0;
     let background;
     let interval = setInterval(() => {
-            $backgroundTween = Number($backgroundTween) + 1000
+        if(document.hasFocus()) backgroundPos = Number(backgroundPos) + 1000
     }, 50000)
 
     onMount(() => {
-        $backgroundTween = 1000;
+        backgroundPos = 1000;
     })
 
     onDestroy(() => {
@@ -28,10 +26,13 @@
         background: linear-gradient(45deg, hsla(var(--s)) 12.5%, hsla(var(--s)/.9) 12.5%, hsla(var(--s)/.9) 37.5%, hsla(var(--s)) 37.5%, hsla(var(--s)) 62.5%, hsla(var(--s)/.9) 62.5%, hsla(var(--s)/.9) 87.5%, hsla(var(--s)) 87.5%);
         background-size: 50px 50px;
         background-position: 50px 50px;
+        transition-duration: 50000ms;
+        transition-timing-function: linear;
+        transition-property: background-position;
     }
 </style>
 
-<div bind:this={background} style={`background-position: ${Math.ceil($backgroundTween)}px 50px`} class="h-screen w-screen background top-0 absolute overflow-x-hidden font-oswald">
+<div bind:this={background} style={`background-position: ${Math.ceil(backgroundPos)}px 50px`} class="h-screen w-screen background top-0 absolute overflow-x-hidden font-oswald">
 
     <Loading duration=1500></Loading>
 

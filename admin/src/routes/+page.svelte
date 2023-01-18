@@ -24,13 +24,13 @@
         
         <NavUl>
             <P size="sm">🚪 Har gått in</P>
+            <P size="sm">🚶 Har inte gått in</P>
             <P size="sm">💸 Har betalat</P>
             <P size="sm">❌ Har inte betalat</P>
         </NavUl>
 
-        <NavUl/>
-
         <NavUl>
+            <Button on:click={() => {window.location.replace("https://apidisco.melo.se/login")}} pill outline class="!p-2" size="xs">Logga in</Button>
             <Button on:click={() => {socket.emit("updateDB")}} pill outline class="!p-2 aspect-[1/1]" size="xs">↻</Button>
         </NavUl>
     </Navbar>
