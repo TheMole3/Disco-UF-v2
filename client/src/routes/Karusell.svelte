@@ -35,7 +35,7 @@
 
     /* sports roller */
     let sportI = 0;
-    let sports = ["🕺","🪩", "🎉", "🎶" ]
+    let sports = ["🕺", "🎉", "🎶" ]
     let sportIn, sportOut;
     let updateSport = () => {
         if(!sportIn || !candyOut) return;
@@ -285,7 +285,7 @@
                         👪
                     </div>
                   </h2>
-                <p class="font-thin">Att gå på discot kan vara ett stort äventyr, och då kan det vara tryggt att ha någon med sig. Du som förälder är välkommen in på dansgolvet. Dock brukar barnen ofta vilja att du går när de väl kommit igång och hittat sina kompisar. Då har vi vårt föräldradagis i anslutning till discot där du som förälder kan vara när ditt barn är inne på discot.</p>
+                <p class="font-thin">Att gå på discot kan vara ett stort äventyr, och då kan det vara tryggt att ha någon med sig. Du som förälder är välkommen in på dansgolvet. Dock brukar barnen ofta vilja att du går när de väl kommit igång och hittat sina kompisar. Då har vi vårt föräldradagis i anslutning till discot där du som förälder kan vara när ditt barn är inne på discot. Här finns också bulle & kaffe</p>
             </div>
         </div>
     </div> 

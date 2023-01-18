@@ -1,4 +1,8 @@
 {
+  "src/lib/discoFont.ttf": {
+    "file": "_app/immutable/assets/discoFont-4101fe0a.ttf",
+    "src": "src/lib/discoFont.ttf"
+  },
   "src/routes/+page.css": {
     "file": "_app/immutable/assets/_page-d2339ce4.css",
     "src": "src/routes/+page.css"
@@ -8,24 +12,8 @@
     "src": "src/routes/booking/+page.css"
   },
   "src/routes/+layout.css": {
-    "file": "_app/immutable/assets/_layout-af661e85.css",
+    "file": "_app/immutable/assets/_layout-241463ff.css",
     "src": "src/routes/+layout.css"
-  },
-  ".svelte-kit/generated/nodes/3.js": {
-    "file": "_app/immutable/chunks/3-35653d01.js",
-    "src": ".svelte-kit/generated/nodes/3.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/booking/+page.svelte"
-    ]
-  },
-  "src/routes/+layout.js": {
-    "file": "_app/immutable/modules/pages/_layout.js-bf954bd4.js",
-    "src": "src/routes/+layout.js",
-    "isEntry": true,
-    "imports": [
-      "__layout-7e4796dc.js"
-    ]
   },
   ".svelte-kit/generated/nodes/1.js": {
     "file": "_app/immutable/chunks/1-6e013afc.js",
@@ -35,28 +23,12 @@
       "node_modules/@sveltejs/kit/src/runtime/components/error.svelte"
     ]
   },
-  "_index-fb2e71b4.js": {
-    "file": "_app/immutable/chunks/index-fb2e71b4.js",
+  "_index-039f38da.js": {
+    "file": "_app/immutable/chunks/index-039f38da.js",
     "imports": [
-      "_index-32829884.js"
-    ]
-  },
-  "_singletons-9a4d8308.js": {
-    "file": "_app/immutable/chunks/singletons-9a4d8308.js",
-    "imports": [
+      "_index-32829884.js",
       "_index-fb2e71b4.js"
     ]
-  },
-  ".svelte-kit/generated/nodes/2.js": {
-    "file": "_app/immutable/chunks/2-74d1f91c.js",
-    "src": ".svelte-kit/generated/nodes/2.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "src/routes/+page.svelte"
-    ]
-  },
-  "__layout-7e4796dc.js": {
-    "file": "_app/immutable/chunks/_layout-7e4796dc.js"
   },
   ".svelte-kit/generated/nodes/0.js": {
     "file": "_app/immutable/chunks/0-4d247334.js",
@@ -67,12 +39,24 @@
       "src/routes/+layout.svelte"
     ]
   },
-  "_index-039f38da.js": {
-    "file": "_app/immutable/chunks/index-039f38da.js",
+  ".svelte-kit/generated/nodes/2.js": {
+    "file": "_app/immutable/chunks/2-bb6ba074.js",
+    "src": ".svelte-kit/generated/nodes/2.js",
+    "isDynamicEntry": true,
     "imports": [
-      "_index-32829884.js",
-      "_index-fb2e71b4.js"
+      "src/routes/+page.svelte"
     ]
+  },
+  "src/routes/+layout.js": {
+    "file": "_app/immutable/modules/pages/_layout.js-bf954bd4.js",
+    "src": "src/routes/+layout.js",
+    "isEntry": true,
+    "imports": [
+      "__layout-7e4796dc.js"
+    ]
+  },
+  "__layout-7e4796dc.js": {
+    "file": "_app/immutable/chunks/_layout-7e4796dc.js"
   },
   "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
     "file": "_app/immutable/components/error.svelte-c4807cbd.js",
@@ -83,11 +67,31 @@
       "_singletons-9a4d8308.js"
     ]
   },
+  "_index-fb2e71b4.js": {
+    "file": "_app/immutable/chunks/index-fb2e71b4.js",
+    "imports": [
+      "_index-32829884.js"
+    ]
+  },
+  ".svelte-kit/generated/nodes/3.js": {
+    "file": "_app/immutable/chunks/3-35653d01.js",
+    "src": ".svelte-kit/generated/nodes/3.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "src/routes/booking/+page.svelte"
+    ]
+  },
+  "_singletons-9a4d8308.js": {
+    "file": "_app/immutable/chunks/singletons-9a4d8308.js",
+    "imports": [
+      "_index-fb2e71b4.js"
+    ]
+  },
   "_index-32829884.js": {
     "file": "_app/immutable/chunks/index-32829884.js"
   },
   "node_modules/@sveltejs/kit/src/runtime/client/start.js": {
-    "file": "_app/immutable/start-e7e20c72.js",
+    "file": "_app/immutable/start-c197a101.js",
     "src": "node_modules/@sveltejs/kit/src/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -109,7 +113,10 @@
       "_index-32829884.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout-af661e85.css"
+      "_app/immutable/assets/_layout-241463ff.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/discoFont-4101fe0a.ttf"
     ]
   },
   "src/routes/booking/+page.svelte": {
@@ -125,7 +132,7 @@
     ]
   },
   "src/routes/+page.svelte": {
-    "file": "_app/immutable/components/pages/_page.svelte-7d13bc8a.js",
+    "file": "_app/immutable/components/pages/_page.svelte-1b05771f.js",
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
