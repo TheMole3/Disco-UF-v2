@@ -31,7 +31,34 @@
         if(candyI >= candys.length) candyI = 0;
     }
 
-    let candyInterval = setInterval(updateCandy, 1800)
+    let candyInterval = setInterval(updateCandy, 3000)
+
+    /* sports roller */
+    let sportI = 0;
+    let sports = ["🕺","🪩", "🎉", "🎶" ]
+    let sportIn, sportOut;
+    let updateSport = () => {
+        if(!sportIn || !candyOut) return;
+
+        sportIn.classList.remove("xyz-in");
+        sportOut.classList.remove("xyz-out");
+
+        // Reflow
+        sportIn.offsetHeight;
+        sportOut.offsetHeight;
+
+        sportIn.innerHTML = sports[sportI]
+        sportOut.innerHTML = sports[(sportI-1)>=0?(sportI-1):(sports.length-1)]
+
+        sportIn.classList.add("xyz-in");
+        sportOut.classList.add("xyz-out");
+
+        sportI++
+        if(sportI >= sports.length) sportI = 0;
+    }
+
+    let sportInterval = setInterval(updateSport, 3000)
+
 
 
     /* Touch indicator */
@@ -73,16 +100,18 @@
     
 
     onMount(() => {
+        updateSport()
         updateCandy()
         touchInit()
 
         setTimeout(() => {
             stagger = "xyz-in"
-        }, 2100)
+        }, 10)
 
         // Make scrolling work
         if(typeof window !== "undefined") {
             window.addEventListener("wheel", function (e) {
+                if(e.deltaX) return;
                 if (e.deltaY > 0) carousel.scrollLeft += 250;
                 else carousel.scrollLeft -= 250;
             });
@@ -91,6 +120,9 @@
 
     onDestroy(() => {
         clearInterval(candyInterval)
+        clearInterval(sportInterval)
+
+        
     })
 
 </script>
@@ -117,7 +149,7 @@
                 <a href="/booking" class="btn">Till förbetalningen</a>
               </div>
               <div class="card-actions justify-end">
-                <button class="btn">Om förbetalning</button>
+                <a href="#betalning"><button  class="btn">Om förbetalning</button></a>
               </div>
 
             </div>
@@ -132,6 +164,7 @@
                         <span class="w-8 absolute text-center">🕘</span>
                     </div>
                 </h2>
+                <span>Den 10 februari 2023</span>
                 <div class="flex w-full h-1/3 mt-4 flex-row items-center justify-center text-center">
                     <div>
                         <span>Lågstadie</span><br>
@@ -152,7 +185,7 @@
         </div>
     </div> 
 
-    <div class="{stagger} carousel-item mb-4">
+    <div id="betalning" class="{stagger} carousel-item mb-4">
         <div class="card w-80 md:w-96 bg-base-100 text-primary-content drop-shadow">
             <div class="card-body">
                 <h2 class="card-title">BETALNING
@@ -223,6 +256,54 @@
     </div> 
 
     <div class="{stagger} carousel-item mb-4">
+        <div class="card w-64  bg-base-100 text-primary-content drop-shadow">
+            <div class="card-body">
+                <h2 class="card-title">AKTIVITETER 
+                    <div class="flex flex-col h-8 overflow-hidden">
+                        <span bind:this={sportIn} xyz="origin-middle delay-5 fade up-5 rotate-left-50%" class="xyz-in w-8 absolute text-center"></span>
+                        <span bind:this={sportOut} xyz="origin-middle fade down-5 rotate-right-50%" class="xyz-out w-8 absolute text-center"></span>
+                    </div>
+                  </h2>
+                <p class="font-thin">På discot finns tävlingar och lekar där du kan vinna goda priser!</p>
+                <p class="font-thin mt-0 mb-4">Kanske får ni testa bollkastning, dansstopp eller något annat skojigt. Välkommen!</p>
+            </div>
+        </div>
+    </div> 
+
+    <div class="{stagger} carousel-item mb-4">
+        <div class="card w-80  bg-base-100 text-primary-content drop-shadow">
+            <div class="card-body">
+                <h2 class="card-title">FÖRÄLDRAR 
+                    <div class="flex flex-col h-8 overflow-hidden">
+                        👪
+                    </div>
+                  </h2>
+                <p class="font-thin">Att gå på discot kan vara ett stort äventyr, och då kan det vara tryggt att ha någon med sig. Du som förälder är välkommen in på dansgolvet. Dock brukar barnen ofta vilja att du går när de väl kommit igång och hittat sina kompisar. Då har vi vårt föräldradagis i anslutning till discot där du som förälder kan vara när ditt barn är inne på discot.</p>
+            </div>
+        </div>
+    </div> 
+
+    <div class="{stagger} carousel-item mb-4">
+        <div class="card w-64 bg-base-100 text-primary-content drop-shadow">
+            <div class="card-body">
+                <h2 class="card-title flex-nowrap whitespace-nowrap">OM OSS
+                    <div class="flex h-8">
+                        <span class="w-8 absolute text-center">👋</span>
+                    </div>
+                </h2>
+
+                <p class="font-thin">Vi är UF företaget DISCO MELO som nu för tredje gången kör igen!</p>
+                <p class="font-thin mt-0 mb-4">På discot jobbar ett gäng ungdomar från Curt Nicolin Gymnasiet som finns där ifall det är något! </p>
+
+                <div class="card-actions underline">
+                    <a href="mailto:disco@melo.se">E-post: disco@melo.se</a>
+                    <a href="tel:0114610601">Tel: 011 46 106 01</a>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!--
+    <div class="{stagger} carousel-item mb-4">
         <div class="card w-60 bg-base-100 drop-shadow">
             <figure class="px-10 pt-10">
             <img src="./StoraCoop.png" alt="Stora Coop" class="rounded-xl" />
@@ -233,6 +314,5 @@
             </div>
         </div>
     </div>
-
-
+    -->
 </div>

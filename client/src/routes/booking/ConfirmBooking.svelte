@@ -41,16 +41,14 @@
     <div class="my-3 rounded border-2 border-gray-300 max-h-24 overflow-y-scroll">
         <Heading tag="h7" class="ml-2">Bokningsvillkor</Heading>
         <P class=" p-2" weight="light" color="text-gray-500 dark:text-gray-400">
-            Bokningen måste göras av målsman.
-            <br><br>
-            Vid utebliven ankomst debiteras ingen och alla om du vill så kan jag också erbjuda dig en fin bil med potatis till
+            OBS! Bokningen måste göras av målsman.            
         </P>
     </div>
     <div bind:this={termCheck} class="w-fit rounded p-1">
         <Checkbox bind:checked={terms}>Jag accepterar bokningsvillkoren</Checkbox>
     </div>
     <div bind:this={privacyCheck} class="w-fit rounded p-1">
-        <Checkbox bind:checked={privacy}>Jag accepterar <a href="/" on:click={()=>{privacyOpen = true}} class="text-blue-600 dark:text-blue-500 hover:underline ml-1">integritetspolicyn</a></Checkbox>
+        <Checkbox bind:checked={privacy}>Jag accepterar <a href="/" on:click={(e)=>{e.preventDefault(); privacyOpen = true}} class="text-blue-600 dark:text-blue-500 hover:underline ml-1">integritetspolicyn</a></Checkbox>
     </div>
 </div>
 

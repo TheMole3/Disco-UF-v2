@@ -11,7 +11,7 @@
     Årskurs<br>
     </P>
     <P>Denna data används för hemsidans funktionalitet.<br>
-    All identifierbar data tas bort 1 månad efter bokningens datum har passerat<br>
+    All identifierbar data tas bort 2 månader efter bokningens datum har passerat<br>
     </P>
     <P>Du samtycker till att denna data samlas in genom att använda tjänsten</P>
     <P>
