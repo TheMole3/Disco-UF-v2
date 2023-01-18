@@ -66,11 +66,18 @@
     let showSwipeHint = false;
     let touched = false;
 
-    let isTouchDevice = () => {
-        return (('ontouchstart' in window) ||
-            (navigator.maxTouchPoints > 0) ||
-            (navigator.msMaxTouchPoints > 0));
-    }
+    const isTouchDevice = () => {
+        const prefixes = ['', '-webkit-', '-moz-', '-o-', '-ms-', ''];
+        const mq = query => window.matchMedia(query).matches;
+
+        if (
+            'ontouchstart' in window ||
+            (window.DocumentTouch && document instanceof DocumentTouch)
+        ) {
+            return true;
+        }
+        return mq(['(', prefixes.join('touch-enabled),('), 'heartz', ')'].join(''));
+    };
 
     let onTouch = () => {
         touched = true;
