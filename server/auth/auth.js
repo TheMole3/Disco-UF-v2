@@ -30,6 +30,7 @@ var jwt = {
 
         jsonwebtoken.verify(token, config.authSecret, (err, id) => { // Verify tokens validity and decrypt
             user.findById(id, (error, user) => { // Find logged in user
+                if(!user) return next(new Error(error))
                 if(error || user.authLevel < 1) {
                     const ForbiddenError = new Error("Forbidden");
                     ForbiddenError.data = 403;
